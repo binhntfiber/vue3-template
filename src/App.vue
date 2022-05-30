@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { useToast } from "vue-toastification";
 import { useInterval } from "@vueuse/core";
-import { DEFAULT_CHAIN_ID, CONTRACT_INTERVAL } from "@/constants/common";
+import {
+  DEFAULT_CHAIN_ID,
+  CONTRACT_INTERVAL,
+  APP_TITLE,
+} from "@/constants/common";
 
 import { useConnectWallet } from "@/hooks";
 import type { ConnectorResponse } from "@/types/connector.type";

@@ -5,6 +5,7 @@ import Pages from "vite-plugin-pages";
 import WindiCSS from "vite-plugin-windicss";
 import VueI18n from "@intlify/vite-plugin-vue-i18n";
 import path from "path";
+import inject from "@rollup/plugin-inject";
 
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
@@ -58,6 +59,14 @@ export default defineConfig({
         __dirname,
         "./node_modules/apexcharts/dist/apexcharts.min.js"
       ),
+    },
+  },
+  build: {
+    rollupOptions: {
+      plugins: [inject({ Buffer: ["buffer", "Buffer"] })],
+    },
+    commonjsOptions: {
+      transformMixedEsModules: true,
     },
   },
 });
